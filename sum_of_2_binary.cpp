@@ -1,4 +1,4 @@
-//sum of 2 binary and binary to deciaml c++
+    //sum of 2 binary and binary to deciaml c++
 #include<bits/stdc++.h>
 #include<iostream>
 #include<string.h>
