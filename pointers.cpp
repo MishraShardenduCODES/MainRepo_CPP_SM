@@ -1,39 +1,39 @@
 #include<bits/stdc++.h>
-#include<iostream>
-#include<string>
-#include<limits.h>
-#include<cstdlib>
-#include<cctype>
-#include<vector>
-#include<cmath>
 using namespace std;
 
-int main(){
-    int a=5;
-    cout<<a<<endl;
-    cout<<&a<<endl;
-    int*ptr2;
-    ptr2 = &a;
-    cout<<ptr2<<endl;
-    *ptr2 = 10;
-    cout<<a<<endl;
-    cout<<*ptr2<<endl;
+#define fr(i, len) for(int i = 0; i < len; i++)
+#define frb(i, len) for(int i = len-1; i >= 0; i--)
+#define tas cout<<"Tell a string : ";
+#define nl cout<<"\n";
+#define N 1000
+typedef long long int ll;
+typedef const int c_int;
+typedef vector<int> vnt;
+typedef double dbl;
+c_int MOD = 1e9 + 7;
+c_int Mx_row = 100;
+c_int Mx_col = 100;
 
+int main() {
+    int arr[] = {1, 2, 3};
+    int *p = arr;
 
-    int arr[5]={1,2,3,4,5};
-    cout<<*arr<<endl;
+    (*p)++;  // Increment the value pointed to by p
+    cout << *p << endl;  // Output: 2
+    for(int i:arr) cout<<i<<" "; // arr = {2 , 2 , 3} 
+    nl;
 
-    int*ptr3=arr;
-    for(int i=0;i<5;i++){
-        cout<<*ptr3<<" ";
-        ptr3++;
-    }
-    cout<<endl;
+    p+=2;
+    cout<< *p <<endl;
+    for(int i:arr) cout<<i<<" ";
+    nl;
 
-    for(int i=0;i<5;i++){
-        cout<<*(arr+i)<<" ";
-    }
+    int arr1[] = {1, 2, 3};
+    int *p1 = arr1;
 
-     
-    cout<<endl;
+    cout << *p1++ << endl;  // Output: 1 (value pointed to by p)
+    cout << *p1 << endl;    // Output: 2 (value at the next memory location)
+    for(int i:arr1) cout<<i<<" ";
+
+    return 0;
 }

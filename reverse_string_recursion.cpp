@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define fr(i, len) for(int i = 0; i < len; i++)
@@ -14,13 +14,15 @@ c_int Mx_row = 100;
 c_int Mx_col = 100;
 #define N 1000
 
-int sum_arr(int* arr, int len) {
-    if (len == 0) return 0;
-    return  arr[0] + sum_arr(arr+1,len-1);
+void rvr_str(string& str, int i, int j){
+    if (i > j) return;
+    swap(str[i], str[j]);
+    rvr_str(str, i + 1, j - 1);
 }
-int main() {
-    int arr[] = {5,4,5,10,1,2,3,4,66};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    cout<<"The sum is : "<<sum_arr(arr,len);
-    return 0;
+int main(){
+    string str = "shardendu mishra";
+    int i = 0;
+    int j = str.length() - 1;
+    rvr_str(str,i,j);
+    cout<<"The string is : "<<str;
 }

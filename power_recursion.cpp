@@ -14,13 +14,16 @@ c_int Mx_row = 100;
 c_int Mx_col = 100;
 #define N 1000
 
-int sum_arr(int* arr, int len) {
-    if (len == 0) return 0;
-    return  arr[0] + sum_arr(arr+1,len-1);
+int powr(int a,int b){
+    if (b == 1) return a;
+    if (b == 0) return 1;
+    int ans =  powr(a,b/2);
+    if (b&1) return a * ans * ans;
+    else return ans * ans;
 }
-int main() {
-    int arr[] = {5,4,5,10,1,2,3,4,66};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    cout<<"The sum is : "<<sum_arr(arr,len);
-    return 0;
+int main(){
+    int a,b;
+    cout<<"Tell the value of a and b : ";
+    cin>>a>>b;
+    cout<<powr(a,b);
 }

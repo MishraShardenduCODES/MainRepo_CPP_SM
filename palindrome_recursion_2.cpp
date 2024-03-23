@@ -14,13 +14,14 @@ c_int Mx_row = 100;
 c_int Mx_col = 100;
 #define N 1000
 
-int sum_arr(int* arr, int len) {
-    if (len == 0) return 0;
-    return  arr[0] + sum_arr(arr+1,len-1);
+inline bool pal(string& str, int i) {
+    if (i >= str.length() / 2) return true;
+    if (str[i] != str[str.length() - 1 - i]) return false;
+    return pal(str, i + 1);
 }
-int main() {
-    int arr[] = {5,4,5,10,1,2,3,4,66};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    cout<<"The sum is : "<<sum_arr(arr,len);
-    return 0;
+int main(){
+    string str = "abba";
+    int i = 0;
+    if(pal(str,i)) cout<<"The string "<<str<<" is a palindrome.";
+    else cout<<"It's not";
 }

@@ -14,13 +14,16 @@ c_int Mx_row = 100;
 c_int Mx_col = 100;
 #define N 1000
 
-int sum_arr(int* arr, int len) {
-    if (len == 0) return 0;
-    return  arr[0] + sum_arr(arr+1,len-1);
+void bubble_sort_arr(int arr[],int len){
+    if (len == 1 || len == 0) return ;
+    for(int i=0;i<len - 1;i+=1){
+        if (arr[i] > arr[i+1]) swap(arr[i],arr[i+1]);
+    }
+    bubble_sort_arr(arr,len-1);
 }
-int main() {
-    int arr[] = {5,4,5,10,1,2,3,4,66};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    cout<<"The sum is : "<<sum_arr(arr,len);
-    return 0;
+int main(){
+    int arr[] = {51,42,23,47,18,29,19,20,80};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    bubble_sort_arr(arr,len);
+    fr(i,len) cout<<arr[i]<<" ";
 }
